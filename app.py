@@ -52,24 +52,39 @@ if uploaded_file:
         if 'engine_filter' in st.session_state and st.session_state['engine_filter']:
             df = df[df['Engine'].isin(st.session_state['engine_filter'])]
 
-        # 📌 **EDA Section Description**
-        st.markdown("""
-        ## 📊 Exploratory Data Analysis (EDA)
-        Below are key insights generated from your dataset:
-        - **Threats by Department:** Identify which departments face the highest cybersecurity threats.
-        - **Time Series Analysis:** Detect trends over time to analyze peak attack periods.
-        - **Threat Resolution Status:** Monitor how many threats are resolved or pending action.
-        - **Antivirus Engine Effectiveness:** Assess how well different antivirus engines handle threats.
-        """)
+        # 🔥 **EDA Results with Descriptions**
 
-        # 🔥 **Display Visualizations**
-        if not df.empty:
-            plot_threats_by_department(df)
-            plot_time_series(df)
-            plot_status_pie(df)
-            plot_engine_effectiveness(df)
-        else:
-            st.warning("⚠️ No matching data found after applying filters!")
+        # 📊 **Threats by Department**
+        st.markdown("""
+        ### 📊 Threats by Department
+        This chart shows the distribution of threats detected in different departments.  
+        It helps identify which departments are most vulnerable to cyber threats.
+        """)
+        plot_threats_by_department(df)
+
+        # ⏳ **Time Series Analysis**
+        st.markdown("""
+        ### ⏳ Time Series Analysis
+        This line chart visualizes daily trends in detected threats.  
+        Helps in identifying peak attack periods and monitoring security incidents over time.
+        """)
+        plot_time_series(df)
+
+        # 📈 **Threat Resolution Status**
+        st.markdown("""
+        ### 📈 Threat Resolution Status
+        This pie chart shows how many threats are resolved, in progress, or still unresolved.  
+        Useful for assessing the efficiency of the security response team.
+        """)
+        plot_status_pie(df)
+
+        # 🖥️ **Antivirus Engine Effectiveness**
+        st.markdown("""
+        ### 🖥️ Antivirus Engine Effectiveness
+        This bar chart compares the performance of different antivirus engines.  
+        It helps evaluate which security tools are most effective in handling threats.
+        """)
+        plot_engine_effectiveness(df)
 
         # 📊 **Display Filtered Data Table**
         st.subheader("📝 Filtered Data Table")
