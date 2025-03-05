@@ -7,6 +7,11 @@ from modules.filters import sidebar_filters, initialize_filters
 
 # Title
 st.title("🛡️ EDR Auto-Tracking & Threat Analysis")
+st.markdown("""
+The **EDR Auto-Tracking & Threat Analysis Dashboard** provides real-time insights into endpoint detection and response (EDR) threats. 
+Upload your EDR threat data to visualize incidents, monitor trends, and assess security engine effectiveness. 
+Use the interactive filters to analyze threats by department, type, and status, helping IT security teams enhance their cybersecurity defenses. 🚀
+""")
 
 # Upload CSV File
 st.sidebar.header("📤 Upload Your Dataset")
