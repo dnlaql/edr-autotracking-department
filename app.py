@@ -5,7 +5,7 @@ from modules.data_cleaning import clean_and_assign_department
 from modules.eda import plot_threats_by_department, plot_time_series, plot_status_pie, plot_engine_effectiveness
 from modules.filters import sidebar_filters
 
-st.set_page_config(page_title="EDR Threat Analysis")
+st.set_page_config(page_title="EDR Threat Analysis", layout="wide")
 st.title("🛡️ EDR Auto-Tracking & Threat Analysis")
 
 st.markdown("""
