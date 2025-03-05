@@ -56,11 +56,16 @@ if uploaded_file:
 
         # 📊 **Threats by Department**
         st.markdown("""
-        ### 📊 Threats by Department
+        
         This chart shows the distribution of threats detected in different departments.  
         It helps identify which departments are most vulnerable to cyber threats.
         """)
         plot_threats_by_department(df)
+
+         st.markdown("""
+        This chart shows the distribution of threats detected in different departments.  
+        It helps identify which departments are most vulnerable to cyber threats.
+        """)
 
         # ⏳ **Time Series Analysis**
         st.markdown("""
