@@ -1,5 +1,7 @@
 # 🛡️ EDR Auto-Tracking & Threat Analysis System  
 🚀 **Real-time Monitoring | Interactive Visualizations | Threat Insights**  
+  
+![dashboard-edr-autotracking](https://github.com/user-attachments/assets/2b7281a4-81c2-4b5a-9d62-6abf2625cc50)
 
 ---
 
@@ -26,7 +28,9 @@ Built with **Streamlit**, **Pandas**, and **Plotly**, this tool simplifies cyber
 ---
 
 ## 🖥️ System Architecture  
-  
+![System Architecture](https://via.placeholder.com/1200x500.png?text=System+Architecture)  
+*(Replace with your real system architecture diagram)*  
+
 1️⃣ **Data Ingestion** – Upload CSV files via Streamlit  
 2️⃣ **Data Processing & Cleaning** – Assign departments, format timestamps  
 3️⃣ **Storage Layer** – In-memory or cloud storage (future enhancement)  
@@ -35,8 +39,12 @@ Built with **Streamlit**, **Pandas**, and **Plotly**, this tool simplifies cyber
 
 ---
 
+## 📸 Screenshots  
+### 📊 Threats by Department  
+![Threats by Department](https://via.placeholder.com/800x400.png?text=Chart+Example)  
 
-### 📈 Daily Threat Trends   
+### 📈 Daily Threat Trends  
+![Daily Trends](https://via.placeholder.com/800x400.png?text=Time+Series+Analysis)  
 
 ---
 
@@ -48,9 +56,4 @@ Built with **Streamlit**, **Pandas**, and **Plotly**, this tool simplifies cyber
 
 ---
 
-
-### Screenshot
-
-
-![dashboard-edr-autotracking](https://github.com/user-attachments/assets/3452bcae-441a-4e6d-82e1-17eced94efae)
-
+## 📂 Folder Structure  
