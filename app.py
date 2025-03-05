@@ -3,8 +3,7 @@ import pandas as pd
 from modules.data_loader import load_edr_data
 from modules.data_cleaning import clean_and_assign_department
 from modules.eda import plot_threats_by_department, plot_time_series, plot_status_pie, plot_engine_effectiveness
-from modules.filters import sidebar_filters
-from modules.chatbot import chatbot_response  # Import chatbot function
+from modules.filters import sidebar_filters, initialize_filters
 
 # Title
 st.title("🛡️ EDR Auto-Tracking & Threat Analysis")
@@ -46,21 +45,6 @@ if uploaded_file:
     # Display Data Table
     st.subheader("📝 Filtered Data Table")
     st.dataframe(df)
-
-    # Chatbot Section
-    st.subheader("💬 Chatbot: Ask About Threat Insights")
-
-    if st.button("Enable Chatbot 🤖"):
-        user_input = st.text_input("Type your question here:")
-        if user_input:
-            eda_results = {
-                "most_affected_department": df["Department"].value_counts().idxmax(),
-                "most_common_threat": df["Type"].value_counts().idxmax(),
-                "resolved_threats_count": df[df["Status"] == "Resolved"].shape[0],
-                "total_threats_count": len(df)
-            }
-            response = chatbot_response(user_input, eda_results)
-            st.write(f"💬 **Chatbot:** {response}")
 
 else:
     st.warning("🚀 Please upload a CSV file to proceed!")
