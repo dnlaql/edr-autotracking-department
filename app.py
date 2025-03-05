@@ -15,6 +15,7 @@ The **EDR Auto-Tracking & Threat Analysis Dashboard** helps IT security teams mo
 🔹 **Upload your EDR datasets** (multiple CSVs supported)  
 🔹 **Apply filters to refine threat insights**  
 🔹 **Visualize trends, impacted departments & antivirus effectiveness**  
+### _________________________________________________________________________________________________________________________________________________
 """)
 
 st.sidebar.header("📤 Upload Your Datasets")
