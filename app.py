@@ -52,6 +52,16 @@ if uploaded_file:
         if 'engine_filter' in st.session_state and st.session_state['engine_filter']:
             df = df[df['Engine'].isin(st.session_state['engine_filter'])]
 
+        # 📌 **EDA Section Description**
+        st.markdown("""
+        ## 📊 Exploratory Data Analysis (EDA)
+        Below are key insights generated from your dataset:
+        - **Threats by Department:** Identify which departments face the highest cybersecurity threats.
+        - **Time Series Analysis:** Detect trends over time to analyze peak attack periods.
+        - **Threat Resolution Status:** Monitor how many threats are resolved or pending action.
+        - **Antivirus Engine Effectiveness:** Assess how well different antivirus engines handle threats.
+        """)
+
         # 🔥 **Display Visualizations**
         if not df.empty:
             plot_threats_by_department(df)
