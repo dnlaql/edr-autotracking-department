@@ -5,7 +5,12 @@ import pandas as pd
 def plot_threats_by_department(df):
     """📊 Plot threat distribution by department."""
     st.markdown("### 📊 Threats by Department")
-    st.write("This bar chart shows the number of threats detected in each department, helping identify the most vulnerable areas.")
+    st.write(
+        "This visualization provides a breakdown of threats detected across various departments within the organization. "
+        "By analyzing this data, security teams can pinpoint which departments are most frequently targeted by cyber threats. "
+        "Understanding this distribution allows organizations to allocate resources effectively, strengthen security measures, "
+        "and implement targeted training programs for employees in high-risk departments."
+    )
 
     if df.empty:
         st.warning("⚠️ No data available for visualization!")
@@ -17,7 +22,12 @@ def plot_threats_by_department(df):
 def plot_time_series(df):
     """⏳ Plot daily threat trends over time."""
     st.markdown("### ⏳ Time Series of Threat Detection")
-    st.write("This line chart visualizes the number of threats detected per day, helping security teams monitor trends and spikes.")
+    st.write(
+        "This time-series chart illustrates the daily frequency of detected threats over a given period. "
+        "By analyzing trends and fluctuations, security analysts can identify peak periods of cyber activity, "
+        "potential attack patterns, and anomalies that may require further investigation. "
+        "Monitoring these trends helps in proactive threat mitigation and improving overall cybersecurity posture."
+    )
 
     if df.empty:
         st.warning("⚠️ No data available for visualization!")
@@ -32,7 +42,12 @@ def plot_time_series(df):
 def plot_status_pie(df):
     """📈 Plot threat resolution status distribution."""
     st.markdown("### 📈 Status of Threat Resolutions")
-    st.write("This pie chart displays the proportion of threats that have been resolved, are in progress, or remain unresolved.")
+    st.write(
+        "This pie chart provides an overview of the resolution status of detected threats within the system. "
+        "It categorizes threats based on whether they have been successfully resolved, are currently in progress, "
+        "or remain unresolved. Understanding the distribution of threat resolutions helps assess the efficiency of "
+        "the security response team, identify potential backlog issues, and ensure timely remediation of critical threats."
+    )
 
     if df.empty:
         st.warning("⚠️ No data available for visualization!")
@@ -47,7 +62,12 @@ def plot_status_pie(df):
 def plot_engine_effectiveness(df):
     """🖥️ Plot antivirus engine effectiveness in detecting and resolving threats."""
     st.markdown("### 🖥️ Antivirus Engine Effectiveness")
-    st.write("This bar chart compares the performance of different antivirus engines, helping evaluate their effectiveness in handling threats.")
+    st.write(
+        "This bar chart compares the effectiveness of different antivirus engines in detecting and resolving threats. "
+        "Each security engine's performance is evaluated based on the number of detected threats and their resolution status. "
+        "By analyzing this data, security teams can determine which antivirus solutions are the most reliable, "
+        "identify potential gaps in protection, and make informed decisions about upgrading or fine-tuning security tools."
+    )
 
     if df.empty:
         st.warning("⚠️ No data available for visualization!")
