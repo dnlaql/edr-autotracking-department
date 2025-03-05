@@ -12,20 +12,22 @@ st.markdown("""
 ### 🚀 **Real-time Insights into Endpoint Detection & Response (EDR) Threats**
 The **EDR Auto-Tracking & Threat Analysis Dashboard** helps IT security teams monitor incidents, detect patterns, and analyze security engine effectiveness.
 
-🔹 **Upload your EDR dataset**  
+🔹 **Upload your EDR datasets** (multiple CSVs supported)  
 🔹 **Apply filters to refine threat insights**  
 🔹 **Visualize trends, impacted departments & antivirus effectiveness**  
 """)
 
-st.sidebar.header("📤 Upload Your Dataset")
-uploaded_file = st.sidebar.file_uploader("Upload EDR Threat Data (CSV)", type=["csv"])
+st.sidebar.header("📤 Upload Your Datasets")
+uploaded_files = st.sidebar.file_uploader("Upload one or more CSV files", type=["csv"], accept_multiple_files=True)
 
-if uploaded_file:
-    df = load_edr_data(uploaded_file)
-    df = clean_and_assign_department(df)
-
+if uploaded_files:
+    dfs = [load_edr_data(file) for file in uploaded_files]  # Load each CSV into a DataFrame
+    df = pd.concat(dfs, ignore_index=True)  # Merge all DataFrames into one
+    
+    df = clean_and_assign_department(df)  # Data Cleaning
+    
     if df.empty or df.isnull().all().all():
-        st.error("⚠️ The uploaded dataset is empty or contains only null values. Please upload a valid CSV file.")
+        st.error("⚠️ The uploaded dataset is empty or contains only null values. Please upload valid CSV files.")
     else:
         sidebar_filters(df)
         
@@ -43,7 +45,7 @@ if uploaded_file:
         
         if 'type_filter' in st.session_state and st.session_state['type_filter']:
             df = df[df['Type'].isin(st.session_state['type_filter'])]
-        
+
         if 'status_filter' in st.session_state and st.session_state['status_filter']:
             df = df[df['Status'].isin(st.session_state['status_filter'])]
         
@@ -59,4 +61,4 @@ if uploaded_file:
         st.subheader("📝 Filtered Data Table")
         st.dataframe(df)
 else:
-    st.warning("🚀 Please upload a CSV file to proceed!")
+    st.warning("🚀 Please upload one or more CSV files to proceed!")
