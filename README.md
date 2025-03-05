@@ -51,5 +51,6 @@ Built with **Streamlit**, **Pandas**, and **Plotly**, this tool simplifies cyber
 
 ### Screenshot
 
-[EDR Auto-Tracking & Threat Analysis Dashboard.pdf](https://github.com/user-attachments/files/19092532/EDR.Auto-Tracking.Threat.Analysis.Dashboard.pdf)
+
+![dashboard-edr-autotracking](https://github.com/user-attachments/assets/3452bcae-441a-4e6d-82e1-17eced94efae)
 
