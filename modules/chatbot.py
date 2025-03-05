@@ -2,14 +2,7 @@ import random
 
 def chatbot_response(query, eda_results):
     """
-    Generate rule-based chatbot responses based on user queries.
-    
-    Parameters:
-        query (str): User's input.
-        eda_results (dict): Dictionary containing key EDA metrics.
-        
-    Returns:
-        str: Chatbot response.
+    Rule-based chatbot to explain EDA insights.
     """
     most_affected_department = eda_results.get("most_affected_department", "Unknown")
     most_common_threat = eda_results.get("most_common_threat", "Unknown")
@@ -39,10 +32,8 @@ def chatbot_response(query, eda_results):
         ],
     }
 
-    # Match query with predefined responses
     for key in responses:
         if key in query.lower():
             return random.choice(responses[key])
 
     return "I'm sorry, I couldn't understand your request. Can you specify what insights you need?"
-
