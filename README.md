@@ -28,8 +28,8 @@ Built with **Streamlit**, **Pandas**, and **Plotly**, this tool simplifies cyber
 ---
 
 ## 🖥️ System Architecture  
-![System Architecture](https://via.placeholder.com/1200x500.png?text=System+Architecture)  
-*(Replace with your real system architecture diagram)*  
+![Screenshot 2025-03-06 001508](https://github.com/user-attachments/assets/59e533ec-b99c-4a1a-b320-411db6e34ee7)
+
 
 1️⃣ **Data Ingestion** – Upload CSV files via Streamlit  
 2️⃣ **Data Processing & Cleaning** – Assign departments, format timestamps  
@@ -38,13 +38,7 @@ Built with **Streamlit**, **Pandas**, and **Plotly**, this tool simplifies cyber
 5️⃣ **Visualization & Insights** – Interactive charts for real-time monitoring  
 
 ---
-
-## 📸 Screenshots  
-### 📊 Threats by Department  
-![Threats by Department](https://via.placeholder.com/800x400.png?text=Chart+Example)  
-
-### 📈 Daily Threat Trends  
-![Daily Trends](https://via.placeholder.com/800x400.png?text=Time+Series+Analysis)  
+ 
 
 ---
 
@@ -56,4 +50,4 @@ Built with **Streamlit**, **Pandas**, and **Plotly**, this tool simplifies cyber
 
 ---
 
-## 📂 Folder Structure  
+
