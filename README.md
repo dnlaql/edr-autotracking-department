@@ -1,9 +1,6 @@
 # 🛡️ EDR Auto-Tracking & Threat Analysis System  
 🚀 **Real-time Monitoring | Interactive Visualizations | Threat Insights**  
 
-![EDR Dashboard]([https://via.placeholder.com/1200x500.png?text=EDR+Threat+Analysis+Dashboard](https://github.com/dnlaql/edr-autotracking-department/blob/bc203b8b317746bf2d38c754211dcc1f5b728f61/documentation/dashboard-edr-autotracking.png))  
-*(Replace the above link with a real screenshot of your dashboard)*  
-
 ---
 
 ## 📌 About the Project  
