@@ -2,32 +2,11 @@ import streamlit as st
 import plotly.express as px
 import pandas as pd
 
-"""
-# 📊 EDA (Exploratory Data Analysis) Module
-
-This module contains functions for visualizing EDR (Endpoint Detection & Response) threat data. 
-It helps security teams analyze patterns, identify vulnerable departments, and assess security measures.
-
-## 🔍 **Visualizations Included:**
-- **Threats by Department**: Identify departments most affected by threats.
-- **Time Series of Threats**: Track daily trends in threat detection.
-- **Threat Resolution Status**: Analyze how threats are being resolved.
-- **Antivirus Engine Effectiveness**: Evaluate performance of security solutions.
-"""
-
 def plot_threats_by_department(df):
-    """
-    📊 Plot threat distribution by department.
+    """📊 Plot threat distribution by department."""
+    st.markdown("### 📊 Threats by Department")
+    st.write("This bar chart shows the number of threats detected in each department, helping identify the most vulnerable areas.")
 
-    This function generates a **bar chart** displaying the number of threats detected 
-    in each department. It helps identify which departments are most affected 
-    by cybersecurity threats.
-
-    Parameters:
-        df (DataFrame): The preprocessed EDR dataset containing department-wise threat data.
-    """
-    st.markdown("## 📊 Threats by Department")
-    
     if df.empty:
         st.warning("⚠️ No data available for visualization!")
         return
@@ -36,43 +15,24 @@ def plot_threats_by_department(df):
     st.plotly_chart(fig, use_container_width=True)
 
 def plot_time_series(df):
-    """
-    ⏳ Plot daily threat trends over time.
+    """⏳ Plot daily threat trends over time."""
+    st.markdown("### ⏳ Time Series of Threat Detection")
+    st.write("This line chart visualizes the number of threats detected per day, helping security teams monitor trends and spikes.")
 
-    This function generates a **line chart** that visualizes the number of threats detected 
-    each day. It provides insights into trends, helping security teams monitor periods 
-    of increased threat activity.
-
-    Parameters:
-        df (DataFrame): The preprocessed EDR dataset with time-based threat data.
-    """
-    st.markdown("## ⏳ Time Series of Threat Detection")
-    
     if df.empty:
         st.warning("⚠️ No data available for visualization!")
         return
 
-    # Ensure 'Time Detected' is in datetime format
     df['Time Detected'] = pd.to_datetime(df['Time Detected'], errors='coerce')
-    
-    # Group by daily threat count
     daily_counts = df.groupby(df['Time Detected'].dt.date).size().reset_index(name='Count')
 
     fig = px.line(daily_counts, x='Time Detected', y='Count', title="Daily Threats Detected")
     st.plotly_chart(fig, use_container_width=True)
 
 def plot_status_pie(df):
-    """
-    📈 Plot threat resolution status distribution.
-
-    This function generates a **pie chart** that displays the distribution of 
-    threat resolution statuses, such as "Resolved," "In Progress," or "Unresolved." 
-    It helps in assessing the efficiency of incident response.
-
-    Parameters:
-        df (DataFrame): The preprocessed EDR dataset containing threat status information.
-    """
-    st.markdown("## 📈 Status of Threat Resolutions")
+    """📈 Plot threat resolution status distribution."""
+    st.markdown("### 📈 Status of Threat Resolutions")
+    st.write("This pie chart displays the proportion of threats that have been resolved, are in progress, or remain unresolved.")
 
     if df.empty:
         st.warning("⚠️ No data available for visualization!")
@@ -85,18 +45,10 @@ def plot_status_pie(df):
     st.plotly_chart(fig, use_container_width=True)
 
 def plot_engine_effectiveness(df):
-    """
-    🖥️ Plot antivirus engine effectiveness in detecting and resolving threats.
+    """🖥️ Plot antivirus engine effectiveness in detecting and resolving threats."""
+    st.markdown("### 🖥️ Antivirus Engine Effectiveness")
+    st.write("This bar chart compares the performance of different antivirus engines, helping evaluate their effectiveness in handling threats.")
 
-    This function generates a **grouped bar chart** that compares the effectiveness 
-    of different antivirus engines based on threat resolution status. 
-    It helps in evaluating the performance of security solutions.
-
-    Parameters:
-        df (DataFrame): The preprocessed EDR dataset containing engine-wise threat status.
-    """
-    st.markdown("## 🖥️ Antivirus Engine Effectiveness")
-    
     if df.empty:
         st.warning("⚠️ No data available for visualization!")
         return
