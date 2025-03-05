@@ -6,7 +6,7 @@ from modules.eda import plot_threats_by_department, plot_time_series, plot_statu
 from modules.filters import sidebar_filters
 
 # 🎯 **Dashboard Title & Introduction**
-st.set_page_config(page_title="EDR Threat Analysis", layout="wide")
+st.set_page_config(page_title="EDR Threat Analysis")  # Default layout (centered)
 st.title("🛡️ EDR Auto-Tracking & Threat Analysis")
 
 st.markdown("""
